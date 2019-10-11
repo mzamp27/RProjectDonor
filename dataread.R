@@ -47,15 +47,3 @@ largedonor17 <- which(donor$FY17 >= 100000)
 missinglargedonor <- largedonor18[!(largedonor18 %in% largedonor19)]
 
 
-# graph example
-donor %>%
-  ggplot(aes(population/10^6, total, label = abb)) +
-  geom_point(aes(col = region), size = 3) +
-  geom_text_repel() +
-  scale_x_log10() +
-  scale_y_log10() +
-  xlab("Decrease of donation (log scale)") +
-  ylab("Total small donors (log scale)") +
-  ggtitle("Small donor drop off in 2019") +
-  scale_color_discrete(name = "Region") +
-  theme_economist()
